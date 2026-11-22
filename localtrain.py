@@ -45,7 +45,7 @@ def train_local_model(data, epochs=LOCAL_EPOCHS, batch_size=BATCH_SIZE):
         data["y_train"],
         epochs=epochs,
         batch_size=batch_size,
-        validation_split=0.10,
+        validation_split=0.20,
         verbose=1,
         shuffle=True
     )
