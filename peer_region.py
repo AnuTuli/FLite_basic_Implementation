@@ -131,7 +131,7 @@ class PositionalEncoding(tf.keras.layers.Layer):
         config.update({"feature_dim": self.feature_dim})
         return config
 
-def transformer_encoder(inputs, num_heads=4, key_dim=64, ff_dim=128, dropout_rate=0.1):
+def transformer_encoder(inputs, num_heads=4, key_dim=64, ff_dim=128, dropout_rate=0.3):
     attention_output = MultiHeadAttention(num_heads=num_heads, key_dim=key_dim)(inputs, inputs)
     attention_output = Dropout(dropout_rate)(attention_output)
     attention_output = Add()([inputs, attention_output])
